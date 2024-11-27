@@ -1,0 +1,205 @@
+{
+  "question": "What is your application?",
+  "options": [
+    {
+      "label": "Wind Turbines",
+      "next": {
+        "question": "What is the application?",
+        "options": [
+          {
+            "label": "Main Shaft",
+            "next": {
+              "question": "What is the shaft size?",
+              "options": [
+                {
+                  "label": "More than diameter 350 mm",
+                  "skus": ["FLEXIN"]
+                },
+                {
+                  "label": "Less than diameter 350 mm",
+                  "next": {
+                    "question": "Where is the encoder mounted?",
+                    "options": [
+                      {
+                        "label": "On shaft (at the end)",
+                        "skus": ["ONAXIS_SHAFT"]
+                      },
+                      {
+                        "label": "Around the shaft",
+                        "skus": ["ARTOS", "BONDED_INCREMENTAL"]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "label": "Blades",
+            "skus": ["ONAXIS_PRODUCT_RANGE"]
+          },
+          {
+            "label": "Other",
+            "skus": ["CUSTOM_SOLUTION_WT"]
+          }
+        ]
+      }
+    },
+    {
+      "label": "Cobots",
+      "next": {
+        "question": "What is the application?",
+        "options": [
+          {
+            "label": "Joints",
+            "next": {
+              "question": "Does it require functional safety?",
+              "options": [
+                {
+                  "label": "Yes",
+                  "skus": ["AKSIM_FS", "AKSIM_REDUNDANT"]
+                },
+                {
+                  "label": "No",
+                  "skus": ["AKSIM_2", "AKSIM_4"]
+                }
+              ]
+            }
+          },
+          {
+            "label": "Grippers",
+            "skus": ["RM08"]
+          },
+          {
+            "label": "Other",
+            "skus": ["CUSTOM_SOLUTION_CB"]
+          }
+        ]
+      }
+    },
+    {
+      "label": "AGVs",
+      "next": {
+        "question": "What is the focus?",
+        "options": [
+          {
+            "label": "Drivetrain",
+            "skus": ["ONAXIS_ORBIS"]
+          },
+          {
+            "label": "Sensor Side",
+            "next": {
+              "question": "What accuracy is needed?",
+              "options": [
+                {
+                  "label": "Better than +/- 10 μm/m",
+                  "skus": ["HILIN"]
+                },
+                {
+                  "label": "Incremental",
+                  "skus": ["INCREMENTAL"]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "label": "Printing",
+      "next": {
+        "question": "What accuracy is needed?",
+        "options": [
+          {
+            "label": "Better than +/- 10 μm/m",
+            "skus": ["HILIN"]
+          },
+          {
+            "label": "Worse than +/- 10 μm/m",
+            "next": {
+              "question": "What protocol is required?",
+              "options": [
+                {
+                  "label": "BiSS, SSI, SPI",
+                  "skus": ["LA11", "LF11"]
+                },
+                {
+                  "label": "Mitsubishi, Yaskawa, Fanuc",
+                  "skus": ["LA12"]
+                },
+                {
+                  "label": "Any",
+                  "skus": ["CUSTOM_SOLUTION_PRINTING"]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "label": "Medical",
+      "next": {
+        "question": "What is the application?",
+        "options": [
+          {
+            "label": "Surgery Robots",
+            "next": {
+              "question": "What is the focus?",
+              "options": [
+                {
+                  "label": "Joints",
+                  "skus": ["AKSIM_2", "AKSIM_FS"]
+                },
+                {
+                  "label": "Tools",
+                  "skus": ["ONAXIS_ORBIS", "RM08"]
+                }
+              ]
+            }
+          },
+          {
+            "label": "Surgery Beds",
+            "skus": ["LA11", "LF11"]
+          },
+          {
+            "label": "CT Scanners",
+            "skus": ["FLEXIN"]
+          },
+          {
+            "label": "Sample Handling",
+            "next": {
+              "question": "What type of solution?",
+              "options": [
+                {
+                  "label": "Absolute",
+                  "skus": ["LF11_ARTOS_BOARD"]
+                },
+                {
+                  "label": "Incremental",
+                  "skus": ["SMALL_INCREMENTAL_RLC2IC"]
+                }
+              ]
+            }
+          },
+          {
+            "label": "Other",
+            "next": {
+              "question": "Linear or Rotary?",
+              "options": [
+                {
+                  "label": "Linear",
+                  "skus": ["LA11", "LF11", "HILIN"]
+                },
+                {
+                  "label": "Rotary",
+                  "skus": ["AKSIM_ORBIS", "ONAXIS"]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
