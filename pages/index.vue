@@ -2,24 +2,41 @@
   <div class="p-6 bg-gray-100 min-h-screen text-gray-800">
     <!-- Selections History -->
     <div v-if="history.length > 0" class="mb-6">
-  <h2 class="text-xl font-semibold text-gray-900">Your Selections:</h2>
+  <!-- <h2 class="text-xl font-semibold text-gray-900">Your Selections:</h2> -->
   <div class="mt-2 text-gray-700 breadcrumbs">
     <ul :class="{ 'flex flex-wrap items-center': !isVertical, 'flex flex-col': isVertical }">
-      <li v-for="(selection, index) in history" :key="index" class="flex items-center whitespace-nowrap">
-        <span class="text-gray-400 bg-gray-200 rounded-full px-2 py-1 text-xs mr-2">
-           {{ index + 1 }}
-        </span>
-        <span
-          class="font-bold text-orange-500 cursor-pointer hover:underline" 
-          @click="goToStep(index)"
+      <!-- Start Over button -->
+      <li class="flex items-center mr-2">
+        <button 
+          @click="reset" 
+          class="p-1 rounded-full hover:bg-gray-200 focus:outline-none"
+          title="Start over" 
+          aria-label="Start over"
         >
-          {{ selection.label }}
-        </span>
-        <span v-if="index < history.length - 1 && !isVertical" class="mx-2">&rarr;</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+          </svg>
+        </button>
+      </li>
+      <!-- Breadcrumb items -->
+      <li v-for="(selection, index) in history" :key="index" class="flex items-center whitespace-nowrap">        
+          <span class="text-gray-400 bg-gray-200 rounded-full px-2 py-1 text-xs mr-2">
+             {{ index + 1 }}
+          </span>
+          <span
+            class="font-bold text-orange-500 cursor-pointer hover:underline" 
+            @click="goToStep(index)"
+          >
+            {{ selection.label }}
+          </span>
+          <span v-if="index < history.length - 1 && !isVertical" class="mx-2">&rarr;</span>
       </li>
     </ul>
   </div>
 </div>
+
+
+
     <!-- Current Question -->
     <div v-if="currentNode && currentNode.question" class="mb-6">
       <h1 class="text-3xl font-bold text-gray-900 mb-4">
@@ -50,23 +67,30 @@
       </ul>
     </div>
 
-    <!-- Buttons -->
-    <div class="mt-6 flex gap-4"> 
-      <!-- <button 
-        @click="goBack" 
-        :disabled="history.length === 0"
-        class="px-4 py-2 bg-gray-800 text-white rounded disabled:bg-gray-200 disabled:cursor-not-allowed hover:bg-gray-700 transition cursor-pointer" 
-      >
-        Go Back
-      </button> -->
-      <button 
-        @click="reset" 
-        :disabled="history.length === 0"
-        class="px-4 py-2 bg-gray-800 text-white rounded disabled:bg-gray-200 disabled:cursor-not-allowed hover:bg-gray-700 transition cursor-pointer" 
-      >
-        Start over
+    <div v-if="history.length > 0" class="mb-6">
+      <h2 class="mt-4 text-xl font-semibold text-gray-900">Your selection:</h2>
+
+      <ul class="mt-2 text-gray-700 list-disc pl-5">
+        <li v-for="(item, index) in history" :key="index">
+          <span class="font-medium text-gray-900">
+            {{ item.question }} 
+          </span>
+          <span class="text-gray-600">
+            &nbsp;&rarr;&nbsp; {{ item.label }}
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div v-if="history.length > 0" class="mt-6 flex space-x-4">
+      <button @click="goBack" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg">
+        Back
+      </button>
+      <button @click="reset" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg">
+        Reset
       </button>
     </div>
+
   </div>
 </template>
 
