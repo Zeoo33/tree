@@ -44,14 +44,14 @@
       <button 
         @click="goBack" 
         :disabled="history.length === 0"
-        class="px-4 py-2 bg-gray-800 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition cursor-pointer" 
+        class="px-4 py-2 bg-gray-800 text-white rounded disabled:bg-gray-200 disabled:cursor-not-allowed hover:bg-gray-700 transition cursor-pointer" 
       >
         Go Back
       </button>
       <button 
         @click="reset" 
         :disabled="history.length === 0"
-        class="px-4 py-2 bg-gray-800 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition cursor-pointer" 
+        class="px-4 py-2 bg-gray-800 text-white rounded disabled:bg-gray-200 disabled:cursor-not-allowed hover:bg-gray-700 transition cursor-pointer" 
       >
         Reset
       </button>
