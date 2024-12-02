@@ -1,15 +1,15 @@
 <template>
-  <div class="p-6 bg-gray-100 min-h-screen text-gray-800">
+  <div class="p-6 bg-background min-h-screen text-gray-800">
     <!-- Breadcrumbs (Visible on medium screens and up) -->
     <div v-if="history.length" class="mb-6 hidden md:block">
-      <div class="mt-2 text-gray-700 breadcrumbs">
+      <div class="mt-2 text-warm-gray breadcrumbs">
         <ul class="flex flex-wrap items-center">
           <!-- Start Over button -->
           <li class="flex items-center mr-2">
-            <button 
-              @click="reset" 
+            <button
+              @click="reset"
               class="p-1 rounded-full hover:bg-gray-200 focus:outline-none"
-              title="Start over" 
+              title="Start over"
               aria-label="Start over"
             >
               <!-- Home icon -->
@@ -19,12 +19,12 @@
             </button>
           </li>
           <!-- Breadcrumb items -->
-          <li v-for="(selection, index) in history" :key="index" class="flex items-center whitespace-nowrap">        
-            <span class="text-white bg-black rounded-full px-2 py-1 text-xs mr-2">
-              <span class="font-bold">{{ index + 1 }}</span> 
-            </span> 
+          <li v-for="(selection, index) in history" :key="index" class="flex items-center whitespace-nowrap">
+            <span class="text-white bg-gray-900 rounded-full px-2 py-1 text-xs mr-2">
+              <span class="font-bold">{{ index + 1 }}</span>
+            </span>
             <span
-              class="font-bold text-orange-500 cursor-pointer hover:underline" 
+              class="font-bold text-warm-gray cursor-pointer hover:text-orange"
               @click="goToStep(index)"
             >
               {{ selection.label }}
@@ -36,14 +36,14 @@
     </div>
 
     <!-- Current Question -->
-    <div v-if="currentNode?.question" class="mb-6">
+    <div v-if="currentNode?.question" class="mb-6 bg-background p-4 rounded-lg">
       <h1 class="text-3xl font-bold text-gray-900 mb-4">
         {{ currentNode.question }}
       </h1>
-      <ul class="text-base text-gray-700 space-y-2">
-        <li 
-          v-for="(option, index) in currentNode.options" 
-          :key="index" 
+      <ul class="text-base text-greyish-brown space-y-2">
+        <li
+          v-for="(option, index) in currentNode.options"
+          :key="index"
           class="hover:underline cursor-pointer"
           @click="handleOptionSelected(option)"
         >
@@ -55,34 +55,34 @@
     <!-- Recommended Products -->
     <div v-if="currentNode?.skus?.length">
       <h2 class="text-xl font-semibold text-gray-900">Recommended Products:</h2>
-      <ul class="list-disc pl-5 mt-2 text-orange-500">
-        <li v-for="sku in currentNode.skus" :key="sku">
+      <ul class="list-disc pl-5 mt-2 text-orange">
+        <li v-for="sku in currentNode.skus" :key="sku" class="font-medium">
           {{ sku }}
         </li>
       </ul>
     </div>
 
-    <!-- User's Selection History -->
+    <!-- User's Selection History  -->
     <div v-if="history.length" class="mb-6">
       <h2 class="mt-4 text-xl font-semibold text-gray-900">Your selection:</h2>
-      <ul class="mt-2 text-gray-700 list-disc pl-5">
+      <ul class="mt-2 text-warm-gray list-disc pl-5">
         <li v-for="(item, index) in history" :key="index">
           <span class="font-medium text-gray-900">
-            {{ item.question }} 
+            {{ item.question }}
           </span>
           <span class="text-gray-600">
             &nbsp;&rarr;&nbsp; {{ item.label }}
           </span>
         </li>
-      </ul>
-    </div>
+      </ul>      
+    </div>    
 
     <!-- Navigation Buttons -->
-    <div v-if="history.length" class="mt-6 flex space-x-4 justify-center md:justify-start"> 
-      <button @click="goBack" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg">
+    <div v-if="history.length" class="mt-6 flex space-x-4 justify-center md:justify-start">
+      <button @click="goBack" class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg">
         Previous Step
       </button>
-      <button @click="reset" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg">
+      <button @click="reset" class="bg-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg">
         Start Over
       </button>
     </div>
