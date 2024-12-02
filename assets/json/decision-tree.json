@@ -200,6 +200,143 @@
           }
         ]
       }
+    },
+    {
+      "label": "Gimbal",
+      "next": {
+        "question": "What type of gimbal?",
+        "options": [
+          {
+            "label": "Pan-Tilt",
+            "skus": ["PT_SKU1", "PT_SKU2"]
+          },
+          {
+            "label": "Roll-Stabilized",
+            "skus": ["RS_SKU1", "RS_SKU2"]
+          },
+          {
+            "label": "3-Axis",
+            "skus": ["3AXIS_SKU1", "3AXIS_SKU2"]
+          }
+        ]
+      }
+    },
+    {
+      "label": "Exoskeletons",
+      "next": {
+        "question": "What is the exoskeleton used for?",
+        "options": [
+          {
+            "label": "Industrial",
+            "next": {
+              "question": "What is the focus area?",
+              "options": [
+                {
+                  "label": "Upper Body",
+                  "next": {
+                    "question": "Does it require feedback control?",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "skus": ["UB_FEEDBACK", "UB_CONTROL"]
+                      },
+                      {
+                        "label": "No",
+                        "skus": ["UB_BASIC"]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Lower Body",
+                  "next": {
+                    "question": "What type of assistance is needed?",
+                    "options": [
+                      {
+                        "label": "Full Support",
+                        "skus": ["LB_FULL_SUPPORT"]
+                      },
+                      {
+                        "label": "Partial Support",
+                        "skus": ["LB_PARTIAL_SUPPORT"]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "label": "Medical",
+            "next": {
+              "question": "What is the rehabilitation goal?",
+              "options": [
+                {
+                  "label": "Gait Training",
+                  "next": {
+                    "question": "What type of feedback is required?",
+                    "options": [
+                      {
+                        "label": "Visual",
+                        "skus": ["GAIT_VISUAL_FEEDBACK"]
+                      },
+                      {
+                        "label": "Haptic",
+                        "skus": ["GAIT_HAPTIC_FEEDBACK"]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Upper Limb Therapy",
+                  "next": {
+                    "question": "Is fine motor control required?",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "skus": ["UL_FINE_MOTOR"]
+                      },
+                      {
+                        "label": "No",
+                        "skus": ["UL_BASIC"]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "label": "Military",
+            "next": {
+              "question": "What is the focus of the exoskeleton?",
+              "options": [
+                {
+                  "label": "Load Carrying",
+                  "skus": ["MIL_LOAD"]
+                },
+                {
+                  "label": "Enhanced Mobility",
+                  "next": {
+                    "question": "Does it require terrain adaptation?",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "skus": ["MIL_TERRAIN_ADAPT"]
+                      },
+                      {
+                        "label": "No",
+                        "skus": ["MIL_STANDARD"]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
     }
+    
   ]
 }
