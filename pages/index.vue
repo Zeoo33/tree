@@ -40,16 +40,17 @@
       <h1 class="text-3xl font-bold text-gray-900 mb-4">
         {{ currentNode.question }}
       </h1>
-      <ul class="text-base text-greyish-brown space-y-2">
-        <li
-          v-for="(option, index) in currentNode.options"
-          :key="index"
-          class="hover:underline cursor-pointer"
-          @click="handleOptionSelected(option)"
-        >
-          {{ option.label }}
-        </li>
-      </ul>
+<div class="flex flex-wrap max-w-[600px] ml-0 mr-auto">
+  <button
+    v-for="(option, index) in currentNode.options"
+    :key="index"
+    @click="handleOptionSelected(option)"
+    class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow m-2 text-sm"
+  >
+    {{ option.label }}
+  </button>
+</div>
+
     </div>
 
     <!-- Recommended Products -->
