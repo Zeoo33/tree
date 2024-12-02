@@ -82,7 +82,7 @@
       <button @click="goBack" class="bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg">
         Previous Step
       </button>
-      <button @click="reset" class="bg-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg">
+      <button @click="reset" class="button-primary">
         Start Over
       </button>
     </div>

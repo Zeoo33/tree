@@ -29,7 +29,10 @@ export default {
         "greyish-brown": "#5a5a5a",
         "black-bg": "#2b2b2b",
         black: "#1e1e1e",
-        orange: "#fb903b",
+        orange: {
+          DEFAULT: "#fb903b",
+          600: "#fa8223",
+        },
         red: "#EB340A",
         seaweed: "#1cc781",
         overlay: "rgba(0, 0, 0, .75)",
