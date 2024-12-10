@@ -21,7 +21,7 @@
               <span class="font-bold text-warm-gray cursor-pointer hover:text-orange" @click="goToStep(index)">
                 {{ selection.label }}
               </span>
-              <span v-if="index < history.length - 1" class="mx-2">&rarr;</span>
+              <span v-if="index < history.length - 1" class="mx-2">→</span>
             </li>
           </ul>
         </div>
@@ -63,7 +63,7 @@
               {{ item.question }}
             </span>
             <span class="text-gray-600">
-              &nbsp;&rarr;&nbsp; {{ item.label }}
+               →  {{ item.label }}
             </span>
           </li>
         </ul>
@@ -87,45 +87,88 @@
   export default {
     data() {
       return {
-        currentNode: treeData, // Start at the root of the tree
-        history: [], // User's selection history
+        currentNode: treeData, // Start at the root of the decision tree
+        history: [], // User's selection history (array of objects)
       };
     },
     methods: {
-      // Extracted method for getting the next node
+      /**
+       * Gets the next node in the decision tree based on the selected option.
+       * If the option has a 'next' property, it returns the next node.
+       * If the option has a 'skus' property, it returns an object with the skus,
+       * indicating the end of the decision path.
+       *
+       * @param {Object} option - The selected option object.
+       * @returns {Object} - The next node in the decision tree or an object with skus.
+       */
       getNextNode(option) {
         return option.next || { skus: option.skus };
       },
-      // Handle option selection and navigate to the next node
+  
+      /**
+       * Handles the selection of an option in the decision tree.
+       * It adds the current question and selected option to the history,
+       * and then updates the currentNode to the next node based on the selected option.
+       *
+       * @param {Object} option - The selected option object.
+       */
       handleOptionSelected(option) {
         this.history.push({
           question: this.currentNode.question,
-          optionId: option.id, // Use option.id instead of option.label
-          label: option.label,  // Store the label for display purposes
+          optionId: option.id, // Use option.id to uniquely identify the selected option
+          label: option.label,  // Store the label for display in the history/breadcrumbs
         });
         this.currentNode = this.getNextNode(option);
       },
-      // Go back one step in the decision tree
+  
+      /**
+       * Navigates back one step in the decision tree history.
+       */
       goBack() {
         this.goToStep(this.history.length - 2);
       },
-      // Navigate to a specific step in the history
-      goToStep(index) {
-        if (index < 0) return this.reset();
   
+      /**
+       * Navigates to a specific step in the decision tree history.
+       *
+       * @param {number} index - The index of the step to navigate to (0-based).
+       */
+      goToStep(index) {
+        // If the index is out of bounds (e.g., -1 when the history is empty), reset the tree.
+        if (index < 0 || index >= this.history.length) {
+          return this.reset();
+        }
+      
+        // Rebuild the history up to the desired step.
         this.history = this.history.slice(0, index + 1);
-        let currentNode = treeData;
+      
+        // Reconstruct the current node by traversing the tree from the root
+        // based on the selections in the updated history.
+        let currentNode = treeData; // Start from the root of the tree
         for (const selection of this.history) {
+          // Find the option in the current node's options that matches the selection's optionId.
           const option = currentNode.options.find(opt => opt.id === selection.optionId);
+      
+          // If the option is not found (which indicates an invalid state),
+          // reset the tree and exit the loop to prevent errors.
           if (!option) {
-            // Handle the error: reset or show a message
-            return this.reset();
+            console.error("Error: Invalid optionId found in history.", selection.optionId);
+            this.reset();
+            return;
           }
+      
+          // Move to the next node based on the selected option.
           currentNode = this.getNextNode(option);
         }
+      
+        // Update the currentNode to reflect the reconstructed state.
         this.currentNode = currentNode;
       },
-      // Reset the decision tree to the initial state
+      
+  
+      /**
+       * Resets the decision tree to its initial state (back to the root node).
+       */
       reset() {
         this.currentNode = treeData;
         this.history = [];
@@ -146,4 +189,3 @@
     /* Adjust spacing for vertical layout */
   }
   </style>
-  
