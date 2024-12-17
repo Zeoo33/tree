@@ -5,6 +5,9 @@
         <option value="en-US">{{ $t('english') }}</option>
         <option value="de-DE">{{ $t('german') }}</option>
         <option value="ja-JP">{{ $t('japanese') }}</option>
+        <option value="ko-KR">{{ $t('korean') }}</option>
+        <option value="zh-CN">{{ $t('chinese') }}</option>
+        <option value="zh-TW">{{ $t('traditional_chinese') }}</option>
       </select>
     </div>
     <!-- Breadcrumbs (Visible on medium screens and up) -->

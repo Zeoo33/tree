@@ -17,6 +17,21 @@ export default defineNuxtConfig({
         code: 'ja-JP',
         iso: 'ja-JP',
         file: 'ja-JP.json'
+      },
+      {
+        code: 'ko-KR',
+        iso: 'ko-KR',
+        file: 'ko-KR.json'
+      },
+      {
+        code: 'zh-CN',
+        iso: 'zh-CN',
+        file: 'zh-CN.json'
+      },
+      {
+        code: 'zh-TW',
+        iso: 'zh-TW',
+        file: 'zh-TW.json'
       }
     ],
     langDir: 'locales/',
