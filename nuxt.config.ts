@@ -1,5 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ['@nuxtjs/i18n'],
+  i18n: {
+    locales: [
+      {
+        code: 'en-US',
+        iso: 'en-US',
+        file: 'en-US.json'
+      },
+      {
+        code: 'de-DE',
+         iso: 'de-DE',
+        file: 'de-DE.json'
+      },
+      {
+        code: 'ja-JP',
+        iso: 'ja-JP',
+        file: 'ja-JP.json'
+      }
+    ],
+    langDir: 'locales/',
+    defaultLocale: 'en-US',
+  },
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
 

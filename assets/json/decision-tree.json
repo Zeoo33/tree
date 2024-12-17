@@ -1,37 +1,37 @@
 {
-  "question": "What is your application?",
+  "question": "q_root",
   "options": [
     {
       "id": "app_1",
-      "label": "Wind Turbines",
+      "label": "l_app_1",
       "next": {
-        "question": "What is the application?",
+        "question": "q_app_1_next",
         "options": [
           {
             "id": "app_1_1",
-            "label": "Main Shaft",
+            "label": "l_app_1_1",
             "next": {
-              "question": "What is the shaft size?",
+              "question": "q_app_1_1_next",
               "options": [
                 {
                   "id": "app_1_1_1",
-                  "label": "More than diameter 350 mm",
+                  "label": "l_app_1_1_1",
                   "skus": ["FLEXIN"]
                 },
                 {
                   "id": "app_1_1_2",
-                  "label": "Less than diameter 350 mm",
+                  "label": "l_app_1_1_2",
                   "next": {
-                    "question": "Where is the encoder mounted?",
+                    "question": "q_app_1_1_2_next",
                     "options": [
                       {
                         "id": "app_1_1_2_1",
-                        "label": "On shaft (at the end)",
+                        "label": "l_app_1_1_2_1",
                         "skus": ["ONAXIS_SHAFT"]
                       },
                       {
                         "id": "app_1_1_2_2",
-                        "label": "Around the shaft",
+                        "label": "l_app_1_1_2_2",
                         "skus": ["ARTOS", "BONDED_INCREMENTAL"]
                       }
                     ]
@@ -42,12 +42,12 @@
           },
           {
             "id": "app_1_2",
-            "label": "Blades",
+            "label": "l_app_1_2",
             "skus": ["ONAXIS_PRODUCT_RANGE"]
           },
           {
             "id": "app_1_3",
-            "label": "Other",
+            "label": "l_app_1_3",
             "skus": ["CUSTOM_SOLUTION_WT"]
           }
         ]
@@ -55,24 +55,24 @@
     },
     {
       "id": "app_2",
-      "label": "Cobots",
+      "label": "l_app_2",
       "next": {
-        "question": "What is the application?",
+        "question": "q_app_2_next",
         "options": [
           {
             "id": "app_2_1",
-            "label": "Joints",
+            "label": "l_app_2_1",
             "next": {
-              "question": "Does it require functional safety?",
+              "question": "q_app_2_1_next",
               "options": [
                 {
                   "id": "app_2_1_1",
-                  "label": "Yes",
+                  "label": "l_app_2_1_1",
                   "skus": ["AKSIM_FS", "AKSIM_REDUNDANT"]
                 },
                 {
                   "id": "app_2_1_2",
-                  "label": "No",
+                  "label": "l_app_2_1_2",
                   "skus": ["AKSIM_2", "AKSIM_4"]
                 }
               ]
@@ -80,12 +80,12 @@
           },
           {
             "id": "app_2_2",
-            "label": "Grippers",
+            "label": "l_app_2_2",
             "skus": ["RM08"]
           },
           {
             "id": "app_2_3",
-            "label": "Other",
+            "label": "l_app_2_3",
             "skus": ["CUSTOM_SOLUTION_CB"]
           }
         ]
@@ -93,29 +93,29 @@
     },
     {
       "id": "app_3",
-      "label": "AGVs",
+      "label": "l_app_3",
       "next": {
-        "question": "What is the focus?",
+        "question": "q_app_3_next",
         "options": [
           {
             "id": "app_3_1",
-            "label": "Drivetrain",
+            "label": "l_app_3_1",
             "skus": ["ONAXIS_ORBIS"]
           },
           {
             "id": "app_3_2",
-            "label": "Sensor Side",
+            "label": "l_app_3_2",
             "next": {
-              "question": "What accuracy is needed?",
+              "question": "q_app_3_2_next",
               "options": [
                 {
                   "id": "app_3_2_1",
-                  "label": "Better than +/- 10 μm/m",
+                  "label": "l_app_3_2_1",
                   "skus": ["HILIN"]
                 },
                 {
                   "id": "app_3_2_2",
-                  "label": "Incremental",
+                  "label": "l_app_3_2_2",
                   "skus": ["INCREMENTAL"]
                 }
               ]
@@ -126,34 +126,34 @@
     },
     {
       "id": "app_4",
-      "label": "Printing",
+      "label": "l_app_4",
       "next": {
-        "question": "What accuracy is needed?",
+        "question": "q_app_4_next",
         "options": [
           {
             "id": "app_4_1",
-            "label": "Better than +/- 10 μm/m",
+            "label": "l_app_4_1",
             "skus": ["HILIN"]
           },
           {
             "id": "app_4_2",
-            "label": "Worse than +/- 10 μm/m",
+            "label": "l_app_4_2",
             "next": {
-              "question": "What protocol is required?",
+              "question": "q_app_4_2_next",
               "options": [
                 {
                   "id": "app_4_2_1",
-                  "label": "BiSS, SSI, SPI",
+                  "label": "l_app_4_2_1",
                   "skus": ["LA11", "LF11"]
                 },
                 {
                   "id": "app_4_2_2",
-                  "label": "Mitsubishi, Yaskawa, Fanuc",
+                  "label": "l_app_4_2_2",
                   "skus": ["LA12"]
                 },
                 {
                   "id": "app_4_2_3",
-                  "label": "Any",
+                  "label": "l_app_4_2_3",
                   "skus": ["CUSTOM_SOLUTION_PRINTING"]
                 }
               ]
@@ -164,24 +164,24 @@
     },
     {
       "id": "app_5",
-      "label": "Medical",
+      "label": "l_app_5",
       "next": {
-        "question": "What is the application?",
+        "question": "q_app_5_next",
         "options": [
           {
             "id": "app_5_1",
-            "label": "Surgery Robots",
+            "label": "l_app_5_1",
             "next": {
-              "question": "What is the focus?",
+              "question": "q_app_5_1_next",
               "options": [
                 {
                   "id": "app_5_1_1",
-                  "label": "Joints",
+                  "label": "l_app_5_1_1",
                   "skus": ["AKSIM_2", "AKSIM_FS"]
                 },
                 {
                   "id": "app_5_1_2",
-                  "label": "Tools",
+                  "label": "l_app_5_1_2",
                   "skus": ["ONAXIS_ORBIS", "RM08"]
                 }
               ]
@@ -189,28 +189,28 @@
           },
           {
             "id": "app_5_2",
-            "label": "Surgery Beds",
+            "label": "l_app_5_2",
             "skus": ["LA11", "LF11"]
           },
           {
             "id": "app_5_3",
-            "label": "CT Scanners",
+            "label": "l_app_5_3",
             "skus": ["FLEXIN"]
           },
           {
             "id": "app_5_4",
-            "label": "Sample Handling",
+            "label": "l_app_5_4",
             "next": {
-              "question": "What type of solution?",
+              "question": "q_app_5_4_next",
               "options": [
                 {
                   "id": "app_5_4_1",
-                  "label": "Absolute",
+                  "label": "l_app_5_4_1",
                   "skus": ["LF11_ARTOS_BOARD"]
                 },
                 {
                   "id": "app_5_4_2",
-                  "label": "Incremental",
+                  "label": "l_app_5_4_2",
                   "skus": ["SMALL_INCREMENTAL_RLC2IC"]
                 }
               ]
@@ -218,18 +218,18 @@
           },
           {
             "id": "app_5_5",
-            "label": "Other",
+            "label": "l_app_5_5",
             "next": {
-              "question": "Linear or Rotary?",
+              "question": "q_app_5_5_next",
               "options": [
                 {
                   "id": "app_5_5_1",
-                  "label": "Linear",
+                  "label": "l_app_5_5_1",
                   "skus": ["LA11", "LF11", "HILIN"]
                 },
                 {
                   "id": "app_5_5_2",
-                  "label": "Rotary",
+                  "label": "l_app_5_5_2",
                   "skus": ["AKSIM_ORBIS", "ONAXIS"]
                 }
               ]
@@ -240,23 +240,23 @@
     },
     {
       "id": "app_6",
-      "label": "Gimbal",
+      "label": "l_app_6",
       "next": {
-        "question": "What type of gimbal?",
+        "question": "q_app_6_next",
         "options": [
           {
             "id": "app_6_1",
-            "label": "Pan-Tilt",
+            "label": "l_app_6_1",
             "skus": ["PT_SKU1", "PT_SKU2"]
           },
           {
             "id": "app_6_2",
-            "label": "Roll-Stabilized",
+            "label": "l_app_6_2",
             "skus": ["RS_SKU1", "RS_SKU2"]
           },
           {
             "id": "app_6_3",
-            "label": "3-Axis",
+            "label": "l_app_6_3",
             "skus": ["3AXIS_SKU1", "3AXIS_SKU2"]
           }
         ]
@@ -264,30 +264,30 @@
     },
     {
       "id": "app_7",
-      "label": "Exoskeletons",
+      "label": "l_app_7",
       "next": {
-        "question": "What is the exoskeleton used for?",
+        "question": "q_app_7_next",
         "options": [
           {
             "id": "app_7_1",
-            "label": "Industrial",
+            "label": "l_app_7_1",
             "next": {
-              "question": "What is the focus area?",
+              "question": "q_app_7_1_next",
               "options": [
                 {
                   "id": "app_7_1_1",
-                  "label": "Upper Body",
+                  "label": "l_app_7_1_1",
                   "next": {
-                    "question": "Does it require feedback control?",
+                    "question": "q_app_7_1_1_next",
                     "options": [
                       {
                         "id": "app_7_1_1_1",
-                        "label": "Yes",
+                        "label": "l_app_7_1_1_1",
                         "skus": ["UB_FEEDBACK", "UB_CONTROL"]
                       },
                       {
                         "id": "app_7_1_1_2",
-                        "label": "No",
+                        "label": "l_app_7_1_1_2",
                         "skus": ["UB_BASIC"]
                       }
                     ]
@@ -295,18 +295,18 @@
                 },
                 {
                   "id": "app_7_1_2",
-                  "label": "Lower Body",
+                  "label": "l_app_7_1_2",
                   "next": {
-                    "question": "What type of assistance is needed?",
+                    "question": "q_app_7_1_2_next",
                     "options": [
                       {
                         "id": "app_7_1_2_1",
-                        "label": "Full Support",
+                        "label": "l_app_7_1_2_1",
                         "skus": ["LB_FULL_SUPPORT"]
                       },
                       {
                         "id": "app_7_1_2_2",
-                        "label": "Partial Support",
+                        "label": "l_app_7_1_2_2",
                         "skus": ["LB_PARTIAL_SUPPORT"]
                       }
                     ]
@@ -317,24 +317,24 @@
           },
           {
             "id": "app_7_2",
-            "label": "Medical",
+            "label": "l_app_7_2",
             "next": {
-              "question": "What is the rehabilitation goal?",
+              "question": "q_app_7_2_next",
               "options": [
                 {
                   "id": "app_7_2_1",
-                  "label": "Gait Training",
+                  "label": "l_app_7_2_1",
                   "next": {
-                    "question": "What type of feedback is required?",
+                    "question": "q_app_7_2_1_next",
                     "options": [
                       {
                         "id": "app_7_2_1_1",
-                        "label": "Visual",
+                        "label": "l_app_7_2_1_1",
                         "skus": ["GAIT_VISUAL_FEEDBACK"]
                       },
                       {
                         "id": "app_7_2_1_2",
-                        "label": "Haptic",
+                        "label": "l_app_7_2_1_2",
                         "skus": ["GAIT_HAPTIC_FEEDBACK"]
                       }
                     ]
@@ -342,18 +342,18 @@
                 },
                 {
                   "id": "app_7_2_2",
-                  "label": "Upper Limb Therapy",
+                  "label": "l_app_7_2_2",
                   "next": {
-                    "question": "Is fine motor control required?",
+                    "question": "q_app_7_2_2_next",
                     "options": [
                       {
                         "id": "app_7_2_2_1",
-                        "label": "Yes",
+                        "label": "l_app_7_2_2_1",
                         "skus": ["UL_FINE_MOTOR"]
                       },
                       {
                         "id": "app_7_2_2_2",
-                        "label": "No",
+                        "label": "l_app_7_2_2_2",
                         "skus": ["UL_BASIC"]
                       }
                     ]
@@ -364,29 +364,29 @@
           },
           {
             "id": "app_7_3",
-            "label": "Military",
+            "label": "l_app_7_3",
             "next": {
-              "question": "What is the focus of the exoskeleton?",
+              "question": "q_app_7_3_next",
               "options": [
                 {
                   "id": "app_7_3_1",
-                  "label": "Load Carrying",
+                  "label": "l_app_7_3_1",
                   "skus": ["MIL_LOAD"]
                 },
                 {
                   "id": "app_7_3_2",
-                  "label": "Enhanced Mobility",
+                  "label": "l_app_7_3_2",
                   "next": {
-                    "question": "Does it require terrain adaptation?",
+                    "question": "q_app_7_3_2_next",
                     "options": [
                       {
                         "id": "app_7_3_2_1",
-                        "label": "Yes",
+                        "label": "l_app_7_3_2_1",
                         "skus": ["MIL_TERRAIN_ADAPT"]
                       },
                       {
                         "id": "app_7_3_2_2",
-                        "label": "No",
+                        "label": "l_app_7_3_2_2",
                         "skus": ["MIL_STANDARD"]
                       }
                     ]
